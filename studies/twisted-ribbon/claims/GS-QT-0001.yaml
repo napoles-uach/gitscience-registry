@@ -1,0 +1,30 @@
+kind: definition
+study: twisted-ribbon
+role: definition
+title: Helicoidal transport model and transmission observable
+question: What mathematical objects represent twist reversal and transmission?
+plain_language_conclusion: The study fixes the model, reversal operation, and transmission observable
+  used by later claims.
+scope_summary: This is a definition for the declared finite coherent two-terminal model.
+remaining_uncertainty: A definition alone establishes no physical symmetry.
+statement:
+  natural_language: 'Define the twist reversal operation, scattering representation, and total
+
+    transmission functional for the declared helicoidal-ribbon model.
+
+    '
+  latex: '\mathcal S_\tau=\mathcal S[H(\tau)],\qquad
+
+    T(E,\tau)=\operatorname{Tr}[t_\tau^\dagger(E)t_\tau(E)].
+
+    '
+topic: QT
+model: helicoidal-ribbon-v1
+scope: general
+depends_on: []
+conditions:
+- The mathematical object is the finite coherent two-terminal model.
+schema_version: gitscience-claim-v1
+id: GS-QT-0001
+dependency_revisions: []
+created_at: '2026-08-16T22:17:08.369454+00:00'
