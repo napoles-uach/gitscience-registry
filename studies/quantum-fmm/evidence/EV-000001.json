@@ -1,0 +1,92 @@
+{
+  "artifact": {
+    "path": "artifacts/EV-000001.lean.json",
+    "sha256": "379a0ec548029496bd680b2d7ee246700810206904f5102b3758947ad29ee591"
+  },
+  "attestor": {
+    "email": "jnapoles@uach.mx",
+    "name": "Jos\u00e9 Manuel N\u00e1poles Duarte"
+  },
+  "authentication": {
+    "authenticated": false,
+    "method": "none"
+  },
+  "claim": {
+    "git_commit": "e436eeb2379e04a520c389f0b411e44b2daad271",
+    "id": "GS-QF-0003",
+    "path": "claims/GS-QF-0003.yaml",
+    "sha256": "0c1ad135cf484b3d70b34d191a73e36614032107dd3c0e5904f213ba0741cf53"
+  },
+  "classification": "proving",
+  "created_at": "2026-08-16T22:17:25.486639+00:00",
+  "dependencies": [
+    {
+      "git_commit": "d38fe2d4e32fdc3114efe9b7661eba97f124b493",
+      "id": "GS-QF-0001",
+      "path": "claims/GS-QF-0001.yaml",
+      "sha256": "0cdb8bd557ff217f00d05a1696555fedad2238b3454700bea9d530b076ddee45"
+    },
+    {
+      "git_commit": "9829cf3b60afb270ad860456b545449daacccf04",
+      "id": "GS-QF-0002",
+      "path": "claims/GS-QF-0002.yaml",
+      "sha256": "ee0a85ae90f4868b76b0cd8a95e1740d727bffd43578ffb7069187fe005025a4"
+    }
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "machine": "arm64",
+    "packages": {
+      "gitscience": "0.1.0"
+    },
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.12.13",
+    "verifier": {
+      "name": "lean_formal",
+      "version": "0.1.0"
+    },
+    "verifier_source_sha256": {
+      "__init__.py": "5e1c8c0f8fc5459f6c289c9e668bfc2d2b2256eb0a63ce51870e2c7ddec2ba17",
+      "fmm_error_accumulation.lean": "71b628f22305f00b3665115fefad68e8fa26c31cd6d997f635a6f768a1ae4eb7",
+      "plugin.py": "9333c8dad2b2ddcccbbec3c18804e476a7f230cdeac338738435a9bedf74be2d",
+      "twist_transport_symmetry.lean": "10a49c448ff0b3ad52f55aa2b287d4031bae837fb9476ed266ff61dd0221701e"
+    }
+  },
+  "environment_sha256": "d24b8fc54ea3962f31c93bd836370432ddaf91f9e482d512b47c643acee35d61",
+  "id": "EV-000001",
+  "model": {
+    "git_commit": "1f1095a1770f540c83298d8086894e7558fe8802",
+    "id": "quantum-fmm-occupancy-v1",
+    "path": "models/quantum-fmm-occupancy-v1.yaml",
+    "sha256": "bbf26bc6862b01cb2342e3e1d60c1f40668f430c188968c80e7cd488fe44fd87"
+  },
+  "repository_head": "5f9589d53bdb61744d4feb749fb561a51802410b",
+  "schema_version": "gitscience-evidence-v1",
+  "verification": {
+    "arbitrary_code_execution": false,
+    "assertions": [
+      "local_error_bounds_accumulate"
+    ],
+    "evaluations": [
+      {
+        "assertion": "local_error_bounds_accumulate",
+        "detail": {
+          "exit_code": 0,
+          "passes": true,
+          "proof": "fmm_error_accumulation",
+          "source": "fmm_error_accumulation.lean",
+          "stderr": "",
+          "stdout": ""
+        },
+        "passes": true
+      }
+    ],
+    "evidence_kind": "formal_proof",
+    "experiment": "trusted_proof",
+    "request": {
+      "proof": "fmm_error_accumulation"
+    },
+    "verifier": "lean_formal",
+    "verifier_version": "0.1.0"
+  }
+}

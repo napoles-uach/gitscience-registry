@@ -1,0 +1,20 @@
+{
+  "claims": {
+    "local_error_bounds_accumulate": {
+      "exit_code": 0,
+      "passes": true,
+      "proof": "fmm_error_accumulation",
+      "source": "fmm_error_accumulation.lean",
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "diagnostics": {
+    "assertion_established": true,
+    "elaboration_succeeded": true,
+    "lean_invocation_succeeded": true
+  },
+  "lean_version": "Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)",
+  "schema_version": "gitscience-lean-v1",
+  "trusted_bundled_source": true
+}
