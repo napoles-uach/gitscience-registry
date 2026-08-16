@@ -1,0 +1,42 @@
+kind: conjecture
+study: quantum-fmm
+role: open_question
+title: Kinetic evolution admits a useful occupancy-tail bound
+question: Can occupancy overflow be controlled throughout kinetic evolution from accessible initial data?
+plain_language_conclusion: No such bound is established; the desired relationship is recorded as an open
+  conjecture.
+scope_summary: The conjecture targets general kinetic evolution in the declared occupancy model.
+remaining_uncertainty: The kinetic operator need not preserve the capacity-limited subspace.
+statement:
+  natural_language: 'Seek a bound on bad-box probability throughout kinetic evolution using
+
+    initial occupancy, kinetic energy, time, capacity, and box scale.
+
+    '
+  latex: 'p_{\rm bad}(t)\le
+
+    F\!\left(p_{\rm bad}(0),\langle T\rangle,t,c,h\right).
+
+    '
+topic: QF
+model: quantum-fmm-occupancy-v1
+scope: general
+depends_on:
+- GS-QF-0001
+- GS-QF-0004
+limitations:
+- The kinetic operator generally does not commute with Pi_c.
+- No such bound is proved in this case study.
+schema_version: gitscience-claim-v1
+id: GS-QF-0008
+dependency_revisions:
+- id: GS-QF-0001
+  git_commit: d38fe2d4e32fdc3114efe9b7661eba97f124b493
+  sha256: 0cdb8bd557ff217f00d05a1696555fedad2238b3454700bea9d530b076ddee45
+  path: claims/GS-QF-0001.yaml
+- id: GS-QF-0004
+  git_commit: 19090a0b1670312351ca907e6322b80899c56d16
+  sha256: 1f1137de2ddd14937ff8a51e514d1e37384d8ade18cf3cfc06624e08b764202a
+  path: claims/GS-QF-0004.yaml
+conditions: []
+created_at: '2026-08-16T22:17:11.579518+00:00'
