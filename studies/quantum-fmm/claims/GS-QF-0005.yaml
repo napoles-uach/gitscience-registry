@@ -1,0 +1,46 @@
+kind: corollary
+study: quantum-fmm
+role: supporting_result
+title: Conditional quantum-FMM error bound from occupancy tails
+question: What final error bound follows from the local approximation and occupancy-tail premises?
+plain_language_conclusion: The final error is bounded by accumulated good-subspace errors and ideal-state
+  occupancy tails.
+scope_summary: The result is general in form but conditional on every cited premise.
+remaining_uncertainty: It does not infer all intermediate occupancy tails from the initial state.
+statement:
+  natural_language: 'Combining the restricted local error, hybrid accumulation, and RDM tail
+
+    estimate bounds the final state error by good-subspace errors plus local
+
+    occupancy tails of the ideal intermediate states.
+
+    '
+  latex: "\\|\\Psi_R-\\widetilde\\Psi_R\\|\\le\n\\sum_{k=1}^{R}\\left[\n  \\varepsilon_{g,k}+2\\sqrt{\n\
+    \  \\frac{1}{(c+1)!}\\sum_b\\int_{b^{c+1}}\\rho_{c+1}^{(k)}}\n\\right].\n"
+topic: QF
+model: quantum-fmm-occupancy-v1
+scope: general
+depends_on:
+- GS-QF-0002
+- GS-QF-0003
+- GS-QF-0004
+limitations:
+- The bound requires occupancy information at every ideal pre-call state.
+- It does not yet certify the simulation from initial-state data alone.
+schema_version: gitscience-claim-v1
+id: GS-QF-0005
+dependency_revisions:
+- id: GS-QF-0002
+  git_commit: 9829cf3b60afb270ad860456b545449daacccf04
+  sha256: ee0a85ae90f4868b76b0cd8a95e1740d727bffd43578ffb7069187fe005025a4
+  path: claims/GS-QF-0002.yaml
+- id: GS-QF-0003
+  git_commit: e436eeb2379e04a520c389f0b411e44b2daad271
+  sha256: 0c1ad135cf484b3d70b34d191a73e36614032107dd3c0e5904f213ba0741cf53
+  path: claims/GS-QF-0003.yaml
+- id: GS-QF-0004
+  git_commit: 19090a0b1670312351ca907e6322b80899c56d16
+  sha256: 1f1137de2ddd14937ff8a51e514d1e37384d8ade18cf3cfc06624e08b764202a
+  path: claims/GS-QF-0004.yaml
+conditions: []
+created_at: '2026-08-16T22:17:10.813209+00:00'
