@@ -1,0 +1,37 @@
+kind: assumption
+study: twisted-ribbon
+role: assumption
+title: Scattering covariance under twist reversal
+question: What physical covariance would be sufficient to relate opposite twists?
+plain_language_conclusion: The required covariance is stated explicitly as a premise rather than presented
+  as a derived result.
+scope_summary: The premise concerns the declared model, leads, and boundary conditions.
+remaining_uncertainty: The covariance has not been independently proved for the physical implementation.
+statement:
+  natural_language: 'Assume that reversing the twist transforms the scattering representation
+
+    by a map that preserves total transmission.
+
+    '
+  latex: '\mathcal S_{-\tau}=\Phi(\mathcal S_\tau),\qquad
+
+    \mathcal T(\Phi(\mathcal S))=\mathcal T(\mathcal S).
+
+    '
+topic: QT
+model: helicoidal-ribbon-v1
+scope: general
+depends_on:
+- GS-QT-0001
+conditions:
+- The leads and boundary conditions preserve the declared transformation.
+limitations:
+- This physical covariance is declared as an assumption, not proved by Lean.
+schema_version: gitscience-claim-v1
+id: GS-QT-0002
+dependency_revisions:
+- id: GS-QT-0001
+  git_commit: 8608c1a0ba09355c7a8f44ebebe9ef6b2a9c238d
+  sha256: ff22aa05dc1042c1883933faee4a683e61d5968b1b0d66033803afc22e315b64
+  path: claims/GS-QT-0001.yaml
+created_at: '2026-08-16T22:17:08.623837+00:00'
