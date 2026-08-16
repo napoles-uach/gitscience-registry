@@ -1,0 +1,121 @@
+{
+  "artifact": {
+    "path": "artifacts/EV-000002.fmm.json",
+    "sha256": "9021f9a9355a5c4efc51142a90d91f089f1e0157ad182298e69a2558a486e07e"
+  },
+  "attestor": {
+    "email": "jnapoles@uach.mx",
+    "name": "Jos\u00e9 Manuel N\u00e1poles Duarte"
+  },
+  "authentication": {
+    "authenticated": false,
+    "method": "none"
+  },
+  "claim": {
+    "git_commit": "290bb0fd379719420777c3a726f46f17ac995f52",
+    "id": "GS-QF-0007",
+    "path": "claims/GS-QF-0007.yaml",
+    "sha256": "7c2df64cec0c942923d3f2a2f4b287ec1300c4dd6d3393ca7a3d88ee925c63cd"
+  },
+  "classification": "corroborating",
+  "created_at": "2026-08-16T22:17:26.232225+00:00",
+  "dependencies": [
+    {
+      "git_commit": "dc4c830a3ad3217ed622add4215f744062624b4c",
+      "id": "GS-QF-0006",
+      "path": "claims/GS-QF-0006.yaml",
+      "sha256": "29629d0b206331152be7720fcbc3ca6e5f3ee0d3bfea28f5918541c1bf05aac6"
+    }
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "machine": "arm64",
+    "packages": {
+      "gitscience": "0.1.0"
+    },
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.12.13",
+    "verifier": {
+      "name": "fmm_occupancy",
+      "version": "0.1.0"
+    },
+    "verifier_source_sha256": {
+      "__init__.py": "88481d8ac668dbcd935c3fca06de72840fe0cab68219f9a7d095e60e4818b459",
+      "occupancy.py": "b9bc7be6c08ef100df808dc0a171c3235f2c51e0f0e1e64c962b0ce75dec0662",
+      "plugin.py": "da6e897d73b7e959ef7be397ba05da1bc5774aa5f409645f720308afc5e3adbf",
+      "schema.py": "aeb4b63de77fde7d2778a827acf50ca1df8d1b8bd87aab755b89ccff04381e7d"
+    }
+  },
+  "environment_sha256": "b56de0507d118ce1c448def8e39e2f567ecab82c984eb08d99469c98892e8a31",
+  "id": "EV-000002",
+  "model": {
+    "git_commit": "1f1095a1770f540c83298d8086894e7558fe8802",
+    "id": "quantum-fmm-occupancy-v1",
+    "path": "models/quantum-fmm-occupancy-v1.yaml",
+    "sha256": "bbf26bc6862b01cb2342e3e1d60c1f40668f430c188968c80e7cd488fe44fd87"
+  },
+  "repository_head": "e663deb3aaa151ae5edd11093a63d68ecaa77aa6",
+  "schema_version": "gitscience-evidence-v1",
+  "verification": {
+    "arbitrary_code_execution": false,
+    "assertions": [
+      "constant_mean_tail_budget",
+      "proportional_mean_tail_budget",
+      "hybrid_regime_exceeds_tail_budget",
+      "numerical_diagnostics"
+    ],
+    "evaluations": [
+      {
+        "assertion": "constant_mean_tail_budget",
+        "detail": {
+          "observed": 1.8161783036460375e-08,
+          "passes": true,
+          "required": 6.25e-08
+        },
+        "passes": true
+      },
+      {
+        "assertion": "proportional_mean_tail_budget",
+        "detail": {
+          "observed": 6.137068454828352e-08,
+          "passes": true,
+          "required": 6.25e-08
+        },
+        "passes": true
+      },
+      {
+        "assertion": "hybrid_regime_exceeds_tail_budget",
+        "detail": {
+          "observed": 1.0,
+          "passes": true,
+          "required_maximum": 6.25e-08
+        },
+        "passes": true
+      },
+      {
+        "assertion": "numerical_diagnostics",
+        "detail": {
+          "capacities": {
+            "within_configured_limit": true
+          },
+          "probabilities": {
+            "valid": true
+          }
+        },
+        "passes": true
+      }
+    ],
+    "evidence_kind": "computational_experiment",
+    "experiment": "independent_occupancy_regimes",
+    "request": {
+      "calls": 20,
+      "constant_mean": 1.0,
+      "load_fraction": 0.5,
+      "max_capacity": 512,
+      "particles": 4096,
+      "tail_error_budget": 0.01
+    },
+    "verifier": "fmm_occupancy",
+    "verifier_version": "0.1.0"
+  }
+}

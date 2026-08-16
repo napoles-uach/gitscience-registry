@@ -1,0 +1,62 @@
+{
+  "claims": {
+    "constant_mean_tail_budget": {
+      "observed": 1.8161783036460375e-08,
+      "passes": true,
+      "required": 6.25e-08
+    },
+    "hybrid_regime_exceeds_tail_budget": {
+      "observed": 1.0,
+      "passes": true,
+      "required_maximum": 6.25e-08
+    },
+    "proportional_mean_tail_budget": {
+      "observed": 6.137068454828352e-08,
+      "passes": true,
+      "required": 6.25e-08
+    }
+  },
+  "created_at": "2026-08-16T22:17:26.220302+00:00",
+  "diagnostics": {
+    "capacities": {
+      "within_configured_limit": true
+    },
+    "probabilities": {
+      "valid": true
+    }
+  },
+  "model": "independent-uniform-box-occupancy-v1",
+  "per_call_bad_probability_budget": 6.25e-08,
+  "regimes": {
+    "constant_mean": {
+      "boxes": 4096,
+      "capacity": 13,
+      "mean_occupancy": 1.0,
+      "near_field_slot_pairs": 692224,
+      "union_bound_bad_probability": 1.8161783036460375e-08
+    },
+    "inconsistent_hybrid": {
+      "boxes": 316,
+      "capacity": 13,
+      "mean_occupancy": 12.962025316455696,
+      "near_field_slot_pairs": 53404,
+      "union_bound_bad_probability": 1.0
+    },
+    "proportional_mean": {
+      "boxes": 93,
+      "capacity": 89,
+      "mean_occupancy": 44.043010752688176,
+      "near_field_slot_pairs": 736653,
+      "union_bound_bad_probability": 6.137068454828352e-08
+    }
+  },
+  "request": {
+    "calls": 20,
+    "constant_mean": 1.0,
+    "load_fraction": 0.5,
+    "max_capacity": 512,
+    "particles": 4096,
+    "tail_error_budget": 0.01
+  },
+  "schema_version": "fmm-occupancy-v1"
+}
