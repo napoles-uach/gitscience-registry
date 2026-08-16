@@ -1,0 +1,53 @@
+kind: numerical_proposition
+study: twisted-ribbon
+role: main_result
+title: Reference-point transmission is even under twist reversal
+question: Does the Kwant model show equal transmission for opposite twists at the selected parameter point?
+plain_language_conclusion: Yes. The two transmissions agree within 1e-7 at the declared energy, geometry,
+  and couplings.
+scope_summary: This corroborates one finite numerical instance, not all energies or ribbon geometries.
+remaining_uncertainty: Wider parameter sweeps and an independent derivation of covariance are still required.
+statement:
+  natural_language: 'At the declared parameter point, total transmission agrees under twist
+
+    reversal within an absolute tolerance of 1e-7.
+
+    '
+  latex: '|T(E,\tau)-T(E,-\tau)|<10^{-7}
+
+    \quad\text{at}\quad E=1,\ \tau=0.08,\ W=8,\ L=24.
+
+    '
+topic: QT
+model: helicoidal-ribbon-v1
+scope: numerical_instance
+depends_on:
+- GS-QT-0004
+conditions:
+- energy=1.0, hopping=1.0, onsite=0.0, SOC=0.1
+verification:
+  verifier: kwant_transport
+  request:
+    width: 8
+    length: 24
+    energy: 1.0
+    tau: 0.08
+    hopping: 1.0
+    soc: 0.1
+    onsite: 0.0
+    compare_opposite_tau: true
+    check_zero_twist: true
+    check_soc_zero: true
+    symmetry_tolerance: 1.0e-07
+    numerical_tolerance: 1.0e-09
+  assertions:
+  - transmission_even_in_tau
+  - numerical_diagnostics
+schema_version: gitscience-claim-v1
+id: GS-QT-0005
+dependency_revisions:
+- id: GS-QT-0004
+  git_commit: a53f0dfeb3f3961454d04b79ded98d4a88e0dc3a
+  sha256: a17170a95ec7ff312f8b7391a263e3776d10964eedcc58d9f097eacee5e23cae
+  path: claims/GS-QT-0004.yaml
+created_at: '2026-08-16T22:17:09.536576+00:00'
