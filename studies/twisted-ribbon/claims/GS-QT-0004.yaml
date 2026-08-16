@@ -1,0 +1,39 @@
+kind: corollary
+study: twisted-ribbon
+role: supporting_result
+title: Even transmission for the declared helicoidal model
+question: What model-level conclusion follows when the covariance premise is applied?
+plain_language_conclusion: The model has even transmission under twist reversal if the declared covariance
+  holds.
+scope_summary: The conclusion is general within the declared model but remains conditional.
+remaining_uncertainty: The model-specific covariance still needs independent establishment.
+statement:
+  natural_language: 'Under the declared scattering-covariance assumption, the model''s total
+
+    transmission is even under reversal of the twist.
+
+    '
+  latex: 'T(E,-\tau)=T(E,\tau).
+
+    '
+topic: QT
+model: helicoidal-ribbon-v1
+scope: general
+depends_on:
+- GS-QT-0002
+- GS-QT-0003
+limitations:
+- The conclusion remains conditional until covariance is independently established.
+schema_version: gitscience-claim-v1
+id: GS-QT-0004
+dependency_revisions:
+- id: GS-QT-0002
+  git_commit: c5f4dc95e03552daa71ee4f3f34125f05bfbe665
+  sha256: 2311677e04ad6930a90a2e8cbf6ad96ebfda7ec5cd6379564d907fa838bfbe08
+  path: claims/GS-QT-0002.yaml
+- id: GS-QT-0003
+  git_commit: 21e63002398900c6a3d702253b949ad55fec745b
+  sha256: 736f64bc62081e61315358f3fdfbb01c9dd93bba543f52fc1e9a6d171fc44fa1
+  path: claims/GS-QT-0003.yaml
+conditions: []
+created_at: '2026-08-16T22:17:09.178475+00:00'
