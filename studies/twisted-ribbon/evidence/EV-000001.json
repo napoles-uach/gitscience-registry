@@ -1,0 +1,92 @@
+{
+  "artifact": {
+    "path": "artifacts/EV-000001.lean.json",
+    "sha256": "e405e7849c728cf82310f918b4899dc42e3803cbd2cfb875ecd7c15897ab8677"
+  },
+  "attestor": {
+    "email": "jnapoles@uach.mx",
+    "name": "Jos\u00e9 Manuel N\u00e1poles Duarte"
+  },
+  "authentication": {
+    "authenticated": false,
+    "method": "none"
+  },
+  "claim": {
+    "git_commit": "21e63002398900c6a3d702253b949ad55fec745b",
+    "id": "GS-QT-0003",
+    "path": "claims/GS-QT-0003.yaml",
+    "sha256": "736f64bc62081e61315358f3fdfbb01c9dd93bba543f52fc1e9a6d171fc44fa1"
+  },
+  "classification": "proving",
+  "created_at": "2026-08-16T22:17:19.337830+00:00",
+  "dependencies": [
+    {
+      "git_commit": "8608c1a0ba09355c7a8f44ebebe9ef6b2a9c238d",
+      "id": "GS-QT-0001",
+      "path": "claims/GS-QT-0001.yaml",
+      "sha256": "ff22aa05dc1042c1883933faee4a683e61d5968b1b0d66033803afc22e315b64"
+    },
+    {
+      "git_commit": "c5f4dc95e03552daa71ee4f3f34125f05bfbe665",
+      "id": "GS-QT-0002",
+      "path": "claims/GS-QT-0002.yaml",
+      "sha256": "2311677e04ad6930a90a2e8cbf6ad96ebfda7ec5cd6379564d907fa838bfbe08"
+    }
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "machine": "arm64",
+    "packages": {
+      "gitscience": "0.1.0"
+    },
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.12.13",
+    "verifier": {
+      "name": "lean_formal",
+      "version": "0.1.0"
+    },
+    "verifier_source_sha256": {
+      "__init__.py": "5e1c8c0f8fc5459f6c289c9e668bfc2d2b2256eb0a63ce51870e2c7ddec2ba17",
+      "fmm_error_accumulation.lean": "71b628f22305f00b3665115fefad68e8fa26c31cd6d997f635a6f768a1ae4eb7",
+      "plugin.py": "9333c8dad2b2ddcccbbec3c18804e476a7f230cdeac338738435a9bedf74be2d",
+      "twist_transport_symmetry.lean": "10a49c448ff0b3ad52f55aa2b287d4031bae837fb9476ed266ff61dd0221701e"
+    }
+  },
+  "environment_sha256": "d24b8fc54ea3962f31c93bd836370432ddaf91f9e482d512b47c643acee35d61",
+  "id": "EV-000001",
+  "model": {
+    "git_commit": "91fa0437cb652d050b98f06c38207a3bec3cae54",
+    "id": "helicoidal-ribbon-v1",
+    "path": "models/helicoidal-ribbon-v1.yaml",
+    "sha256": "b535168e6345e16378bf91c138d01aadf36efe83e9e8f9a403aa850e8b324a78"
+  },
+  "repository_head": "1bd07aed88d377152793a78440159748add14a74",
+  "schema_version": "gitscience-evidence-v1",
+  "verification": {
+    "arbitrary_code_execution": false,
+    "assertions": [
+      "transport_symmetry_implies_even_transmission"
+    ],
+    "evaluations": [
+      {
+        "assertion": "transport_symmetry_implies_even_transmission",
+        "detail": {
+          "exit_code": 0,
+          "passes": true,
+          "proof": "twist_transport_symmetry",
+          "source": "twist_transport_symmetry.lean",
+          "stderr": "",
+          "stdout": ""
+        },
+        "passes": true
+      }
+    ],
+    "evidence_kind": "formal_proof",
+    "experiment": "trusted_proof",
+    "request": {
+      "proof": "twist_transport_symmetry"
+    },
+    "verifier": "lean_formal",
+    "verifier_version": "0.1.0"
+  }
+}
