@@ -1,0 +1,43 @@
+kind: lemma
+study: quantum-fmm
+role: supporting_result
+title: Box overflow is bounded by local factorial moments
+question: How can overflow probability be related to reduced-density information?
+plain_language_conclusion: A union bound expresses overflow through local factorial moments under the
+  stated normalization.
+scope_summary: The statement is a general analytic lemma for the defined occupancy observables.
+remaining_uncertainty: The continuum reduced-density statement is not checked by the bundled Lean proof.
+statement:
+  natural_language: 'The probability that any leaf box contains more than c particles is
+
+    bounded by a union of order-(c+1) local factorial moments, equivalently by
+
+    integrals of the consistently normalized reduced density.
+
+    '
+  latex: 'p_k\le
+
+    \frac{1}{(c+1)!}\sum_b
+
+    \int_{b^{c+1}}\rho_{c+1}^{(k)}(r_1,\ldots,r_{c+1})
+
+    \,dr_1\cdots dr_{c+1}.
+
+    '
+topic: QF
+model: quantum-fmm-occupancy-v1
+scope: general
+depends_on:
+- GS-QF-0001
+conditions:
+- The reduced density uses the ordered factorial-moment normalization.
+limitations:
+- This continuum RDM statement is not yet checked by the bundled Lean proof.
+schema_version: gitscience-claim-v1
+id: GS-QF-0004
+dependency_revisions:
+- id: GS-QF-0001
+  git_commit: d38fe2d4e32fdc3114efe9b7661eba97f124b493
+  sha256: 0cdb8bd557ff217f00d05a1696555fedad2238b3454700bea9d530b076ddee45
+  path: claims/GS-QF-0001.yaml
+created_at: '2026-08-16T22:17:10.495906+00:00'
