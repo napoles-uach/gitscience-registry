@@ -1,0 +1,62 @@
+kind: numerical_proposition
+study: quantum-fmm
+role: main_result
+title: Constant-mean and proportional-mean box regimes must not be conflated
+question: Can two consistent box-scaling regimes meet the same finite tail budget, and what happens if
+  their parameters are mixed?
+plain_language_conclusion: Both consistent regimes meet the selected budget, while reusing the constant-mean
+  capacity after reducing the box count fails it.
+scope_summary: This is a finite independent-occupancy calculation for 4096 particles and 20 calls.
+remaining_uncertainty: It does not prove asymptotic complexity, dynamic occupancy control, or a fermionic
+  occupancy law.
+statement:
+  natural_language: 'For 4096 independent particles, 20 calls, and tail error budget 0.01, both
+
+    a constant-mean construction and a proportional-mean construction can meet
+
+    the induced per-call overflow budget. Reusing the constant-mean capacity
+
+    while reducing the box count to approximately eta/c violates that budget.
+
+    '
+  latex: 'p_{\mathrm{target}}=\left(\frac{0.01}{2\cdot20}\right)^2=6.25\times10^{-8}.
+
+    \quad B_{\rm const}=4096,\ c_{\rm const}=13;
+
+    \quad B_{\rm prop}=93,\ c_{\rm prop}=89.
+
+    '
+topic: QF
+model: quantum-fmm-occupancy-v1
+scope: numerical_instance
+depends_on:
+- GS-QF-0006
+conditions:
+- particles=4096, calls=20, tail_error_budget=0.01
+- constant_mean=1.0, load_fraction=0.5
+verification:
+  verifier: fmm_occupancy
+  experiment: independent_occupancy_regimes
+  request:
+    particles: 4096
+    calls: 20
+    tail_error_budget: 0.01
+    constant_mean: 1.0
+    load_fraction: 0.5
+    max_capacity: 512
+  assertions:
+  - constant_mean_tail_budget
+  - proportional_mean_tail_budget
+  - hybrid_regime_exceeds_tail_budget
+  - numerical_diagnostics
+limitations:
+- The result is a finite binomial union-bound calculation.
+- It does not establish an asymptotic theorem or a fermionic occupancy law.
+schema_version: gitscience-claim-v1
+id: GS-QF-0007
+dependency_revisions:
+- id: GS-QF-0006
+  git_commit: dc4c830a3ad3217ed622add4215f744062624b4c
+  sha256: 29629d0b206331152be7720fcbc3ca6e5f3ee0d3bfea28f5918541c1bf05aac6
+  path: claims/GS-QF-0006.yaml
+created_at: '2026-08-16T22:17:11.302885+00:00'
