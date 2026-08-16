@@ -1,0 +1,48 @@
+kind: lemma
+study: twisted-ribbon
+role: supporting_result
+title: Scattering covariance implies even transmission
+question: Does the covariance premise logically imply even total transmission?
+plain_language_conclusion: Yes. Lean checks the abstract implication from covariance and transmission
+  invariance to even transmission.
+scope_summary: This is a general logical implication conditional on its premises.
+remaining_uncertainty: Lean does not establish that the physical model satisfies the covariance premise.
+statement:
+  natural_language: 'If scattering is covariant under twist reversal and transmission is
+
+    invariant under that covariance map, total transmission is even in twist.
+
+    '
+  latex: '\left[\mathcal S_{-\tau}=\Phi(\mathcal S_\tau)\ \land\
+
+    \mathcal T\circ\Phi=\mathcal T\right]
+
+    \Longrightarrow T(E,-\tau)=T(E,\tau).
+
+    '
+topic: QT
+model: helicoidal-ribbon-v1
+scope: general
+depends_on:
+- GS-QT-0001
+- GS-QT-0002
+verification:
+  verifier: lean_formal
+  experiment: trusted_proof
+  request:
+    proof: twist_transport_symmetry
+  assertions:
+  - transport_symmetry_implies_even_transmission
+schema_version: gitscience-claim-v1
+id: GS-QT-0003
+dependency_revisions:
+- id: GS-QT-0001
+  git_commit: 8608c1a0ba09355c7a8f44ebebe9ef6b2a9c238d
+  sha256: ff22aa05dc1042c1883933faee4a683e61d5968b1b0d66033803afc22e315b64
+  path: claims/GS-QT-0001.yaml
+- id: GS-QT-0002
+  git_commit: c5f4dc95e03552daa71ee4f3f34125f05bfbe665
+  sha256: 2311677e04ad6930a90a2e8cbf6ad96ebfda7ec5cd6379564d907fa838bfbe08
+  path: claims/GS-QT-0002.yaml
+conditions: []
+created_at: '2026-08-16T22:17:08.900342+00:00'
