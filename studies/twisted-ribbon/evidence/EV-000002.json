@@ -1,0 +1,131 @@
+{
+  "artifact": {
+    "path": "artifacts/EV-000002.kwant.json",
+    "sha256": "a6cf1259cd912b4eed85055038dcaa88ee9d385de874bd340b3895fee23ead56"
+  },
+  "attestor": {
+    "email": "jnapoles@uach.mx",
+    "name": "Jos\u00e9 Manuel N\u00e1poles Duarte"
+  },
+  "authentication": {
+    "authenticated": false,
+    "method": "none"
+  },
+  "claim": {
+    "git_commit": "fee03849e888e7dfba2a63c4381148a0a35d6cd0",
+    "id": "GS-QT-0005",
+    "path": "claims/GS-QT-0005.yaml",
+    "sha256": "42d60e58a7e0ffab7ce0a07881bc09fb6528c7ef92ccf14297650b7a886d3185"
+  },
+  "classification": "corroborating",
+  "created_at": "2026-08-16T22:17:22.276040+00:00",
+  "dependencies": [
+    {
+      "git_commit": "a53f0dfeb3f3961454d04b79ded98d4a88e0dc3a",
+      "id": "GS-QT-0004",
+      "path": "claims/GS-QT-0004.yaml",
+      "sha256": "a17170a95ec7ff312f8b7391a263e3776d10964eedcc58d9f097eacee5e23cae"
+    }
+  ],
+  "environment": {
+    "implementation": "CPython",
+    "machine": "arm64",
+    "packages": {
+      "gitscience": "0.1.0",
+      "kwant": "1.5.0",
+      "numpy": "2.5.2",
+      "scipy": "1.18.0",
+      "tinyarray": "1.2.5"
+    },
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.12.13",
+    "verifier": {
+      "name": "kwant_transport",
+      "version": "0.1.0"
+    },
+    "verifier_source_sha256": {
+      "__init__.py": "45fc509738d8d027c9b75886f3aac282312bb2ed5969802c033450bc098fb164",
+      "plugin.py": "471f78e25d204aa43a801b268147203c2804673d3b31a01d7518034905521e9d",
+      "runner.py": "7531e60e00df19cf68386190e2fe49729236be0157ceb07b1221689e491f6cf5",
+      "schema.py": "bf22774f9bd7ac973f0d70eefd6ce2cdc7d24df3a0412920f575b55bf78f1e8b",
+      "twist_sweep.py": "4980d4a590547c579153219d30645685dbc13e9e5c8163c08cec5941e4bbbfe4",
+      "twisted_nanoribbon.py": "a961540d9a5d2c81272935443aadce775ca020c7eb5ddd1293ba616772e6a127"
+    }
+  },
+  "environment_sha256": "bbdb3322e3da139b9b695596ff5bc1108cedfe3678adbe3943bcc6484827f55c",
+  "id": "EV-000002",
+  "model": {
+    "git_commit": "91fa0437cb652d050b98f06c38207a3bec3cae54",
+    "id": "helicoidal-ribbon-v1",
+    "path": "models/helicoidal-ribbon-v1.yaml",
+    "sha256": "b535168e6345e16378bf91c138d01aadf36efe83e9e8f9a403aa850e8b324a78"
+  },
+  "repository_head": "d69e322309a6af02784aeaaffd861887476af97f",
+  "schema_version": "gitscience-evidence-v1",
+  "verification": {
+    "arbitrary_code_execution": false,
+    "assertions": [
+      "transmission_even_in_tau",
+      "numerical_diagnostics"
+    ],
+    "evaluations": [
+      {
+        "assertion": "transmission_even_in_tau",
+        "detail": {
+          "absolute": 2.9753977059954195e-14,
+          "passes": true,
+          "relative": 7.714880805053685e-15
+        },
+        "passes": true
+      },
+      {
+        "assertion": "numerical_diagnostics",
+        "detail": {
+          "minus_tau": {
+            "hermitian": true,
+            "lead_modes_matched": true,
+            "spin_decomposition_consistent": true,
+            "unitary": true
+          },
+          "plus_tau": {
+            "hermitian": true,
+            "lead_modes_matched": true,
+            "spin_decomposition_consistent": true,
+            "unitary": true
+          },
+          "zero_soc": {
+            "hermitian": true,
+            "lead_modes_matched": true,
+            "spin_decomposition_consistent": true,
+            "unitary": true
+          },
+          "zero_tau": {
+            "hermitian": true,
+            "lead_modes_matched": true,
+            "spin_decomposition_consistent": true,
+            "unitary": true
+          }
+        },
+        "passes": true
+      }
+    ],
+    "evidence_kind": "computational_experiment",
+    "experiment": "point_symmetry",
+    "request": {
+      "check_soc_zero": true,
+      "check_zero_twist": true,
+      "compare_opposite_tau": true,
+      "energy": 1.0,
+      "hopping": 1.0,
+      "length": 24,
+      "numerical_tolerance": 1e-09,
+      "onsite": 0.0,
+      "soc": 0.1,
+      "symmetry_tolerance": 1e-07,
+      "tau": 0.08,
+      "width": 8
+    },
+    "verifier": "kwant_transport",
+    "verifier_version": "0.1.0"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "claims": {
+    "polarization_x_odd_in_tau": {
+      "absolute": 8.751679936302992e-16,
+      "passes": true
+    },
+    "transmission_even_in_tau": {
+      "absolute": 2.9753977059954195e-14,
+      "passes": true,
+      "relative": 7.714880805053685e-15
+    },
+    "zero_soc_polarization": {
+      "absolute": 7.216449660063518e-16,
+      "passes": true
+    },
+    "zero_twist_polarization": {
+      "absolute": 7.861834433321209e-16,
+      "passes": true
+    }
+  },
+  "created_at": "2026-08-16T22:17:22.231614+00:00",
+  "diagnostics": {
+    "minus_tau": {
+      "hermitian": true,
+      "lead_modes_matched": true,
+      "spin_decomposition_consistent": true,
+      "unitary": true
+    },
+    "plus_tau": {
+      "hermitian": true,
+      "lead_modes_matched": true,
+      "spin_decomposition_consistent": true,
+      "unitary": true
+    },
+    "zero_soc": {
+      "hermitian": true,
+      "lead_modes_matched": true,
+      "spin_decomposition_consistent": true,
+      "unitary": true
+    },
+    "zero_tau": {
+      "hermitian": true,
+      "lead_modes_matched": true,
+      "spin_decomposition_consistent": true,
+      "unitary": true
+    }
+  },
+  "model": "effective-square-lattice-helicoidal-ribbon-v1",
+  "request": {
+    "check_soc_zero": true,
+    "check_zero_twist": true,
+    "compare_opposite_tau": true,
+    "energy": 1.0,
+    "hopping": 1.0,
+    "length": 24,
+    "numerical_tolerance": 1e-09,
+    "onsite": 0.0,
+    "soc": 0.1,
+    "symmetry_tolerance": 1e-07,
+    "tau": 0.08,
+    "width": 8
+  },
+  "runs": {
+    "minus_tau": {
+      "energy": 1.0,
+      "hamiltonian_dimension": 384,
+      "hermiticity_residual": 0.0,
+      "lead_block_nmodes": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "polarization_x": -0.00565597053416505,
+      "soc": 0.1,
+      "spin_transmission_minus_x": 1.9392564469614837,
+      "spin_transmission_plus_x": 1.9174430681449133,
+      "tau": -0.08,
+      "transmission": 3.8566995151063965,
+      "transmission_decomposition_residual": 4.440892098500626e-16,
+      "unitarity_residual": 1.2273990548217754e-14
+    },
+    "plus_tau": {
+      "energy": 1.0,
+      "hamiltonian_dimension": 384,
+      "hermiticity_residual": 0.0,
+      "lead_block_nmodes": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "polarization_x": 0.0056559705341641744,
+      "soc": 0.1,
+      "spin_transmission_minus_x": 1.9174430681448995,
+      "spin_transmission_plus_x": 1.9392564469614664,
+      "tau": 0.08,
+      "transmission": 3.8566995151063668,
+      "transmission_decomposition_residual": 8.881784197001252e-16,
+      "unitarity_residual": 7.423480306417935e-15
+    },
+    "zero_soc": {
+      "energy": 1.0,
+      "hamiltonian_dimension": 384,
+      "hermiticity_residual": 0.0,
+      "lead_block_nmodes": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "polarization_x": 7.216449660063518e-16,
+      "soc": 0.0,
+      "spin_transmission_minus_x": 1.9999999999999984,
+      "spin_transmission_plus_x": 2.0000000000000013,
+      "tau": 0.08,
+      "transmission": 4.0,
+      "transmission_decomposition_residual": 0.0,
+      "unitarity_residual": 1.2561403792849421e-14
+    },
+    "zero_tau": {
+      "energy": 1.0,
+      "hamiltonian_dimension": 384,
+      "hermiticity_residual": 0.0,
+      "lead_block_nmodes": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "polarization_x": -7.861834433321209e-16,
+      "soc": 0.1,
+      "spin_transmission_minus_x": 1.9770350643451615,
+      "spin_transmission_plus_x": 1.9770350643451584,
+      "tau": 0.0,
+      "transmission": 3.9540701286903195,
+      "transmission_decomposition_residual": 4.440892098500626e-16,
+      "unitarity_residual": 8.598322022528056e-15
+    }
+  },
+  "schema_version": "kwant-transport-v1"
+}
