@@ -1,0 +1,50 @@
+name: Reproduction or challenge
+description: Reproduce, contradict, or refine an existing versioned claim.
+title: "[Reproduction]: "
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID
+      placeholder: GS-QT-0005
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Target Git revision
+      description: Give the exact commit hash you inspected.
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome
+      options:
+        - Reproduced within declared tolerance
+        - Contradicted within declared scope
+        - Inconclusive
+        - Scope or interpretation challenge
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: Environment and conditions
+      description: Record software versions, parameters, hardware where relevant, and deviations from the original contract.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Observed result
+      description: Report quantitative outcomes and uncertainty, not only pass or fail.
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Public artifacts
+      description: Link code, logs, data, or a repository that permits independent inspection.
+    validations:
+      required: true

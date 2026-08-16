@@ -1,0 +1,32 @@
+name: Validate scientific registry
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install GitScience
+        run: >-
+          python -m pip install
+          git+https://github.com/napoles-uach/gitscience.git@3e1acedaba3a0ecb0d0217db7c382205119a54a3
+      - name: Audit committed evidence
+        run: |
+          gitscience -C studies/twisted-ribbon audit
+          gitscience -C studies/quantum-fmm audit
+      - name: Compile and validate the public registry
+        run: |
+          gitscience registry build --from registry.yaml --output /tmp/registry.json
+          python scripts/validate_registry.py /tmp/registry.json

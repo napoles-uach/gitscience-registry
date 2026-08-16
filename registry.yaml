@@ -1,0 +1,6 @@
+schema_version: gitscience-registry-manifest-v1
+name: GitScience Public Registry
+public_url: https://github.com/napoles-uach/gitscience-registry
+studies:
+  - path: studies/twisted-ribbon
+  - path: studies/quantum-fmm

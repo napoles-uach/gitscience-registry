@@ -1,0 +1,61 @@
+name: Research seed
+description: Propose a scientific question without needing to use Git locally.
+title: "[Seed]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A research seed may be incomplete. It will remain visibly unverified until claims, assumptions, scope, and evidence are formalized and reviewed.
+  - type: input
+    id: title
+    attributes:
+      label: Study title
+      placeholder: A short name for the proposed study
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State the scientific problem in plain language.
+    validations:
+      required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Proposed claim or hypothesis
+      description: Say what you think is true and distinguish it from background context.
+    validations:
+      required: true
+  - type: textarea
+    id: mathematics
+    attributes:
+      label: Mathematical formulation
+      description: Include LaTeX equations, definitions, parameters, and conventions where possible.
+      render: latex
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Assumptions and scope
+      description: List conditions, parameter ranges, approximations, and known exclusions.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Proposed verification
+      description: Explain which calculation, formal proof, data, or trusted package could test the claim.
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Code, data, paper, or prior work
+      description: Add public links and enough provenance for others to inspect the proposal.
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Submission status
+      options:
+        - label: I understand that this seed is not a validated result and may be revised or challenged publicly.
+          required: true
