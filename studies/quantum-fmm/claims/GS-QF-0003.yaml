@@ -1,0 +1,50 @@
+kind: lemma
+study: quantum-fmm
+role: supporting_result
+title: Local hybrid error bounds accumulate additively
+question: How do declared local replacement errors combine across repeated calls?
+plain_language_conclusion: Lean proves that the cumulative error is at most the sum of supplied local
+  bounds.
+scope_summary: This is a general abstract induction over declared local error premises.
+remaining_uncertainty: The proof does not derive the physical or analytic value of each local bound.
+statement:
+  natural_language: 'If the kth hybrid replacement has error at most e_k, repeated replacement
+
+    of R calls has cumulative error at most the sum of the local bounds.
+
+    '
+  latex: '\forall k:\ d_{k+1}\le d_k+e_k,\quad d_0=0
+
+    \quad\Longrightarrow\quad
+
+    d_R\le\sum_{k=1}^{R}e_k.
+
+    '
+topic: QF
+model: quantum-fmm-occupancy-v1
+scope: general
+depends_on:
+- GS-QF-0001
+- GS-QF-0002
+verification:
+  verifier: lean_formal
+  experiment: trusted_proof
+  request:
+    proof: fmm_error_accumulation
+  assertions:
+  - local_error_bounds_accumulate
+limitations:
+- Lean checks the abstract induction, not the analytic derivation of each e_k.
+schema_version: gitscience-claim-v1
+id: GS-QF-0003
+dependency_revisions:
+- id: GS-QF-0001
+  git_commit: d38fe2d4e32fdc3114efe9b7661eba97f124b493
+  sha256: 0cdb8bd557ff217f00d05a1696555fedad2238b3454700bea9d530b076ddee45
+  path: claims/GS-QF-0001.yaml
+- id: GS-QF-0002
+  git_commit: 9829cf3b60afb270ad860456b545449daacccf04
+  sha256: ee0a85ae90f4868b76b0cd8a95e1740d727bffd43578ffb7069187fe005025a4
+  path: claims/GS-QF-0002.yaml
+conditions: []
+created_at: '2026-08-16T22:17:10.258279+00:00'
