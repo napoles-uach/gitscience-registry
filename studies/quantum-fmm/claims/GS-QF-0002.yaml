@@ -1,0 +1,34 @@
+kind: assumption
+study: quantum-fmm
+role: assumption
+title: Restricted non-adaptive FMM call has controlled error
+question: What local approximation bound is required on the capacity-limited subspace?
+plain_language_conclusion: A per-call norm bound is made explicit as an assumption.
+scope_summary: The assumption applies only on the declared good subspace.
+remaining_uncertainty: Correctness of the concrete non-adaptive circuit on that subspace is not established.
+statement:
+  natural_language: 'Assume that each ideal and approximate potential call is norm preserving
+
+    and that their difference is bounded on the capacity-c subspace.
+
+    '
+  latex: '\left\|(U_k-\widetilde U_k)\Pi_c\right\|\le\varepsilon_{g,k}.
+
+    '
+topic: QF
+model: quantum-fmm-occupancy-v1
+scope: general
+depends_on:
+- GS-QF-0001
+conditions:
+- U_k and the globally defined approximate circuit are norm preserving.
+limitations:
+- Correctness of the paper's non-adaptive circuit on this subspace remains to be established.
+schema_version: gitscience-claim-v1
+id: GS-QF-0002
+dependency_revisions:
+- id: GS-QF-0001
+  git_commit: d38fe2d4e32fdc3114efe9b7661eba97f124b493
+  sha256: 0cdb8bd557ff217f00d05a1696555fedad2238b3454700bea9d530b076ddee45
+  path: claims/GS-QF-0001.yaml
+created_at: '2026-08-16T22:17:09.978912+00:00'
