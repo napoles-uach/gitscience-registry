@@ -1,7 +1,7 @@
 schema_version: gitscience-formalization-v1
 id: FM-000001
 created_at: '2026-08-18T00:40:27.894979+00:00'
-status: draft
+status: human_approved
 claim:
   id: GS-QT-0003
   git_commit: 21e63002398900c6a3d702253b949ad55fec745b
@@ -53,4 +53,8 @@ verification:
   assertions:
   - transport_symmetry_implies_even_transmission
 semantic_approval:
-  status: pending
+  status: accepted
+  approved_at: '2026-08-18T00:40:28.254637+00:00'
+  approved_by: José Manuel Nápoles Duarte
+  approved_email: jnapoles@uach.mx
+  formal_statement_sha256: 3f8f4821d4a68aaa7ce48dc622f3cfb2fda34b38f1976d11cbe43ab69d01dcc8
