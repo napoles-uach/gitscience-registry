@@ -1,0 +1,20 @@
+{
+  "claims": {
+    "transport_symmetry_implies_even_transmission": {
+      "exit_code": 0,
+      "passes": true,
+      "proof": "twist_transport_symmetry",
+      "source": "twist_transport_symmetry.lean",
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "diagnostics": {
+    "assertion_established": true,
+    "elaboration_succeeded": true,
+    "lean_invocation_succeeded": false
+  },
+  "lean_version": "error: no default toolchain configured. run `elan default stable` to install & configure the latest Lean 4 stable release.",
+  "schema_version": "gitscience-lean-v1",
+  "trusted_bundled_source": true
+}
