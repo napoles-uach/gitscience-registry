@@ -25,6 +25,7 @@ studies/quantum-fmm/                  another GitScience study root
   articles/                           ordered human-readable arguments
   equations/                          numbered LaTeX records
   claims/                             structured scientific claims
+  formalizations/                     LLM/human proposals and semantic approvals
   evidence/ and artifacts/            verifier outputs and provenance
 ```
 
@@ -51,6 +52,10 @@ gitscience registry build --from registry.yaml --output /tmp/registry.json
 The committed evidence was generated with the trusted `lean_formal`,
 `kwant_transport`, and `fmm_occupancy` verifier contracts. Evidence is
 integrity-checked but not yet cryptographically authenticated.
+
+Formal claims also expose the approved Lean statement, its mapping to the
+scientific claim, assumptions, unformalized content, and scientific-grounding
+status. An LLM proposal cannot invoke Lean until a human approval is committed.
 
 ## Contribute
 

@@ -21,6 +21,22 @@ def main() -> int:
     claim_ids = [state.get("claim", {}).get("id") for state in claims]
     if None in claim_ids or len(claim_ids) != len(set(claim_ids)):
         raise SystemExit("claim IDs must be present and unique")
+    for state in claims:
+        dimensions = state.get("status", {}).get("dimensions", {})
+        if "formalization" not in dimensions or "scientific_grounding" not in dimensions:
+            raise SystemExit(
+                f"claim lacks formalization dimensions: {state.get('claim', {}).get('id')}"
+            )
+        for formalization in state.get("formalizations", []):
+            statement = formalization.get("formal_statement", {})
+            approval = formalization.get("semantic_approval", {})
+            if formalization.get("status") == "human_approved" and (
+                approval.get("status") != "accepted"
+                or approval.get("formal_statement_sha256") != statement.get("sha256")
+            ):
+                raise SystemExit(
+                    f"formal statement is not locked: {formalization.get('id')}"
+                )
     for study in studies:
         coverage = study.get("coverage", {})
         if coverage.get("shown") != coverage.get("total"):

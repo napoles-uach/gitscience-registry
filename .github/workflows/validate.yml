@@ -21,7 +21,7 @@ jobs:
       - name: Install GitScience
         run: >-
           python -m pip install
-          git+https://github.com/napoles-uach/gitscience.git@3e1acedaba3a0ecb0d0217db7c382205119a54a3
+          git+https://github.com/napoles-uach/gitscience.git@fe3c1525c086ef1d1005b5df2cd3148cbd58d747
       - name: Audit committed evidence
         run: |
           gitscience -C studies/twisted-ribbon audit
