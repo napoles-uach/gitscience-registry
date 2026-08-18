@@ -3,6 +3,7 @@
   "name": "quantum-fmm-study",
   "next_claim": 10,
   "next_evidence": 3,
+  "next_formalization": 2,
   "next_review": 1,
   "schema_version": "gitscience-repository-v1"
 }

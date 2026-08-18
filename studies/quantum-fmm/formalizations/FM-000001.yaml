@@ -1,0 +1,55 @@
+schema_version: gitscience-formalization-v1
+id: FM-000001
+created_at: '2026-08-18T00:40:31.300211+00:00'
+status: draft
+claim:
+  id: GS-QF-0003
+  git_commit: e436eeb2379e04a520c389f0b411e44b2daad271
+  sha256: 0c1ad135cf484b3d70b34d191a73e36614032107dd3c0e5904f213ba0741cf53
+  path: claims/GS-QF-0003.yaml
+model:
+  id: quantum-fmm-occupancy-v1
+  git_commit: 1f1095a1770f540c83298d8086894e7558fe8802
+  sha256: bbf26bc6862b01cb2342e3e1d60c1f40668f430c188968c80e7cd488fe44fd87
+  path: models/quantum-fmm-occupancy-v1.yaml
+proposer:
+  kind: human
+  name: José Manuel Nápoles Duarte
+summary: Formalize the abstract induction that accumulates declared local error bounds over a finite number
+  of approximation steps.
+formal_statement:
+  language: lean4
+  theorem_name: local_error_bounds_accumulate
+  declaration: "theorem local_error_bounds_accumulate\n    {Error : Type}\n    (budget : ErrorBudget Error)\n\
+    \    (cumulative stepError : Nat -> Error)\n    (initial : budget.le (cumulative 0) budget.zero)\n\
+    \    (step : forall n,\n      budget.le (cumulative (n + 1))\n        (budget.add (cumulative n) (stepError\
+    \ n))) :\n    forall steps,\n      budget.le (cumulative steps) (accumulatedError budget stepError\
+    \ steps)"
+  sha256: 46e7a641e1fe3192dd890cd593fa29041199911137109a781621259ab608b128
+semantic_mapping:
+- source: A local error bound holds at every approximation step.
+  target: step
+  status: partial
+- source: Local error bounds accumulate over all steps.
+  target: local_error_bounds_accumulate
+  status: exact
+assumptions:
+- The declared error relation is transitive.
+- Ordered addition is monotone in its first argument.
+unformalized:
+- The analytic local quantum-FMM error bound.
+- The occupancy-tail estimate used by the numerical diagnostic.
+- Applicability to generic interacting fermionic states.
+scientific_grounding:
+  status: partial
+  rationale: Lean proves only the abstract accumulation rule; the physical and analytic premises that
+    instantiate the rule remain external obligations.
+verification:
+  verifier: lean_formal
+  experiment: trusted_proof
+  request:
+    proof: fmm_error_accumulation
+  assertions:
+  - local_error_bounds_accumulate
+semantic_approval:
+  status: pending
